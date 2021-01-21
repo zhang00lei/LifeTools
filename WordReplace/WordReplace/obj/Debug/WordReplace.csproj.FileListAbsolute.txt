@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\WordReplace\WordReplace\bin\Debug\WordReplace.exe
+C:\Users\Administrator\Desktop\WordReplace\WordReplace\bin\Debug\WordReplace.pdb
+C:\Users\Administrator\Desktop\WordReplace\WordReplace\obj\Debug\WordReplace.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\WordReplace\WordReplace\obj\Debug\WordReplace.Properties.Resources.resources
+C:\Users\Administrator\Desktop\WordReplace\WordReplace\obj\Debug\WordReplace.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\WordReplace\WordReplace\obj\Debug\WordReplace.exe
+C:\Users\Administrator\Desktop\WordReplace\WordReplace\obj\Debug\WordReplace.pdb
+C:\Users\Administrator\Desktop\WordReplace\WordReplace\obj\Debug\WordReplace.MainForm.resources
+C:\Users\Administrator\Desktop\WordReplace\WordReplace\obj\Debug\WordReplace.WordReplaceForm.resources
