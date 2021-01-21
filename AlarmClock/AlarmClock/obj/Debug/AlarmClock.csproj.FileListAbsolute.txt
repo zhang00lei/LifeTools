@@ -1,0 +1,8 @@
+E:\编程\C#编程\AlarmClock\AlarmClock\bin\Debug\AlarmClock.exe
+E:\编程\C#编程\AlarmClock\AlarmClock\bin\Debug\AlarmClock.pdb
+E:\编程\C#编程\AlarmClock\AlarmClock\obj\Debug\ResolveAssemblyReference.cache
+E:\编程\C#编程\AlarmClock\AlarmClock\obj\Debug\Alarm_Clock.Alarm_Clock_Form.resources
+E:\编程\C#编程\AlarmClock\AlarmClock\obj\Debug\AlarmClock.Properties.Resources.resources
+E:\编程\C#编程\AlarmClock\AlarmClock\obj\Debug\AlarmClock.csproj.GenerateResource.Cache
+E:\编程\C#编程\AlarmClock\AlarmClock\obj\Debug\AlarmClock.exe
+E:\编程\C#编程\AlarmClock\AlarmClock\obj\Debug\AlarmClock.pdb
