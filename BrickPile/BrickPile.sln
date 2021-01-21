@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{E5287466-53A8-9350-96ED-608BAEE11A9C}") = "BrickPile", "Assembly-CSharp.csproj", "{1E9B8B03-9C19-FC8F-31A2-66F911FF1454}"
+EndProject
+Project("{E5287466-53A8-9350-96ED-608BAEE11A9C}") = "BrickPile", "Assembly-CSharp-Editor.csproj", "{51B4A83C-1AE0-4CA7-4B85-15B4C0B456A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E9B8B03-9C19-FC8F-31A2-66F911FF1454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E9B8B03-9C19-FC8F-31A2-66F911FF1454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E9B8B03-9C19-FC8F-31A2-66F911FF1454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E9B8B03-9C19-FC8F-31A2-66F911FF1454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B4A83C-1AE0-4CA7-4B85-15B4C0B456A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B4A83C-1AE0-4CA7-4B85-15B4C0B456A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B4A83C-1AE0-4CA7-4B85-15B4C0B456A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B4A83C-1AE0-4CA7-4B85-15B4C0B456A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

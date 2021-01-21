@@ -1,0 +1,13 @@
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/UnityEngine.dll
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/UnityEditor.dll
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/Mono.Cecil.dll
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/Unity.DataContract.dll
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/Steven/Downloads/BrickPile/Temp/bin/Debug/Mono.Cecil.Mdb.dll
