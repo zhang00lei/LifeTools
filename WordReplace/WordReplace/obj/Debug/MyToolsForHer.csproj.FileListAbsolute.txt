@@ -33,3 +33,17 @@ E:\MyTools\MyToolsForHer\WordReplace\WordReplace\obj\Debug\MyToolsForHer.csproj.
 E:\MyTools\MyToolsForHer\WordReplace\WordReplace\obj\Debug\WordReplace.exe
 E:\MyTools\MyToolsForHer\WordReplace\WordReplace\obj\Debug\WordReplace.pdb
 E:\MyTools\MyToolsForHer\WordReplace\WordReplace\obj\Debug\MyToolsForHer.FindAndCopyForm.resources
+E:\LifeTools\WordReplace\WordReplace\bin\Debug\TenderTools.exe
+E:\LifeTools\WordReplace\WordReplace\bin\Debug\TenderTools.pdb
+E:\LifeTools\WordReplace\WordReplace\obj\Debug\MyToolsForHer.FindAndCopyForm.resources
+E:\LifeTools\WordReplace\WordReplace\obj\Debug\MyToolsForHer.WordReplaceForm.resources
+E:\LifeTools\WordReplace\WordReplace\obj\Debug\MyToolsForHer.Main.resources
+E:\LifeTools\WordReplace\WordReplace\obj\Debug\MyToolsForHer.ImgToWordForm.resources
+E:\LifeTools\WordReplace\WordReplace\obj\Debug\TenderTools.Properties.Resources.resources
+E:\LifeTools\WordReplace\WordReplace\obj\Debug\MyToolsForHer.ResetName.resources
+E:\LifeTools\WordReplace\WordReplace\obj\Debug\MyToolsForHer.csproj.GenerateResource.cache
+E:\LifeTools\WordReplace\WordReplace\obj\Debug\MyToolsForHer.csproj.CoreCompileInputs.cache
+E:\LifeTools\WordReplace\WordReplace\obj\Debug\MyToolsForHer.csproj.CopyComplete
+E:\LifeTools\WordReplace\WordReplace\obj\Debug\TenderTools.exe
+E:\LifeTools\WordReplace\WordReplace\obj\Debug\TenderTools.pdb
+E:\LifeTools\WordReplace\WordReplace\obj\Debug\MyToolsForHer.csprojAssemblyReference.cache

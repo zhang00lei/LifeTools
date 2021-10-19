@@ -42,19 +42,19 @@
             this.查找并复制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemDirFindCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFileFindCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemFindCopyHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.更多ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ForHer = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemFindCopyHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.查找并复制ToolStripMenuItem,
+            this.重命名ToolStripMenuItem,
             this.图片插入WordToolStripMenuItem,
             this.MenuWordReplace,
-            this.重命名ToolStripMenuItem,
-            this.查找并复制ToolStripMenuItem,
             this.更多ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -163,6 +163,13 @@
             this.MenuItemFileFindCopy.Text = "文件";
             this.MenuItemFileFindCopy.Click += new System.EventHandler(this.MenuItemFileFindCopy_Click);
             // 
+            // MenuItemFindCopyHelp
+            // 
+            this.MenuItemFindCopyHelp.Name = "MenuItemFindCopyHelp";
+            this.MenuItemFindCopyHelp.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemFindCopyHelp.Text = "帮助";
+            this.MenuItemFindCopyHelp.Click += new System.EventHandler(this.MenuItemFindCopyHelp_Click);
+            // 
             // 更多ToolStripMenuItem
             // 
             this.更多ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -174,16 +181,9 @@
             // ForHer
             // 
             this.ForHer.Name = "ForHer";
-            this.ForHer.Size = new System.Drawing.Size(166, 22);
+            this.ForHer.Size = new System.Drawing.Size(180, 22);
             this.ForHer.Text = "关于csv配置文件";
             this.ForHer.Click += new System.EventHandler(this.MenuItemAbout_Click);
-            // 
-            // MenuItemFindCopyHelp
-            // 
-            this.MenuItemFindCopyHelp.Name = "MenuItemFindCopyHelp";
-            this.MenuItemFindCopyHelp.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemFindCopyHelp.Text = "帮助";
-            this.MenuItemFindCopyHelp.Click += new System.EventHandler(this.MenuItemFindCopyHelp_Click);
             // 
             // Main
             // 
