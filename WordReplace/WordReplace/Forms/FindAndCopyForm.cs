@@ -68,7 +68,7 @@ namespace MyToolsForHer
             FindAndCopy findAndCopy = new FindAndCopy();
             List<string> infoList =
                 findAndCopy.ExecFindCopy(TbTarget.Text, TbCopyTo.Text, TbConfigPath.Text, findCopyDir);
-
+            MessageBox.Show("操作完毕","提示",MessageBoxButtons.OK);
             infoList.Insert(0, "以下目录或文件未发现:");
             File.WriteAllLines(TbInfo.Text, infoList.ToArray());
         }
