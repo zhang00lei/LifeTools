@@ -77,7 +77,8 @@ namespace MyToolsForHer
         private void MenuItemResetNameHelp_Click(object sender, EventArgs e)
         {
             string strTemp = "1.配置文件有两列内容，第一列为被替换名字，第二列为替换名字，参考默认配置文件<须utf-8编码>进行配置\n" +
-                             "2.如果重命名文件名，须配置完整的文件名<包含扩展名>";
+                             "2.如果重命名文件名，须配置完整的文件名<包含扩展名>\n" +
+                             "3.文件名或目录名不能包含下列任何字符:\\/:* ?\"";
             MessageBox.Show(strTemp, "提示");
         }
 

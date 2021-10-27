@@ -39,7 +39,11 @@ namespace MyToolsForHer
             _setConfigInfo(configPath);
             if (isDir)
             {
-                _resetConfigDirName(dirPath, configPath, statPath);
+               bool isSuccess = _resetConfigDirName(dirPath, configPath, statPath);
+                if (!isSuccess)
+                {
+                    return;
+                }
             }
             else
             {
@@ -52,8 +56,16 @@ namespace MyToolsForHer
             }
         }
 
-        private void _resetConfigDirName(string dirPath, string configPath, string statPath)
+        private bool _resetConfigDirName(string dirPath, string configPath, string statPath)
         {
+            foreach (KeyValuePair<string, string> info in _dirInfoDic)
+            {
+                if ((info.Value.IndexOfAny(System.IO.Path.GetInvalidFileNameChars()) >= 0))
+                {
+                    MessageBox.Show($"重命名目录名有误\n【{info.Value}】","提示",MessageBoxButtons.OK);
+                    return false;
+                }
+            }
             string errorMsg = "未更名目录如下：\n";
             foreach (KeyValuePair<string, string> info in _dirInfoDic)
             {
@@ -68,6 +80,7 @@ namespace MyToolsForHer
                 }
             }
             File.WriteAllText(statPath, errorMsg, Encoding.UTF8);
+            return true;
         }
 
         private void _resetConfigFileName(string dirPath, string configPath, string statPath)

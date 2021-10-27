@@ -98,7 +98,14 @@ public class CsvHelper
     {
         if (File.Exists(csvPath))
         {
-            StreamReader sr = new StreamReader(csvPath, Encoding.Default, false);
+            StreamReader sr;
+            try
+            {
+                sr = new StreamReader(csvPath, Encoding.Default, false);
+            }
+            catch {
+                throw new FileNotFoundException("配置文件未关闭");
+            }
 
             string csvInfo = sr.ReadToEnd();
             sr.Close();
