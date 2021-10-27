@@ -15,16 +15,11 @@ namespace MyToolsForHer
             Dictionary<string, List<string>> configInfo = CsvHelper.AnalysisCsvByFile(configPath);
             int temp = 0;
             List<string> keys = new List<string>();
-            List<string> values = new List<string>();
             foreach (List<string> tempList in configInfo.Values)
             {
                 if (temp == 0)
                 {
                     keys = tempList;
-                }
-                else if (temp == 1)
-                {
-                    values = tempList;
                 }
 
                 temp++;
@@ -32,8 +27,7 @@ namespace MyToolsForHer
 
             for (int j = 0; j < keys.Count; j++)
             {
-                string toPath = j > values.Count ? string.Empty : values[j];
-                _dirInfoDic.Add(keys[j], toPath);
+                _dirInfoDic.Add(keys[j], string.Empty);
             }
         }
 
@@ -49,7 +43,8 @@ namespace MyToolsForHer
                     string dirName = strTemp[strTemp.Length - 1];
                     if (_dirInfoDic.ContainsKey(dirName))
                     {
-                        directoryCopy(info, toPath);
+                        string  copyToPath = Path.Combine(toPath,dirName);
+                        directoryCopy(info, copyToPath);
                         _dirInfoDic.Remove(dirName);
                     }
                 }
@@ -80,6 +75,9 @@ namespace MyToolsForHer
 
         public void directoryCopy(string sourceDirectory, string targetDirectory)
         {
+            if (!Directory.Exists(targetDirectory)) {
+                Directory.CreateDirectory(targetDirectory);
+            }
             try
             {
                 DirectoryInfo dir = new DirectoryInfo(sourceDirectory);
