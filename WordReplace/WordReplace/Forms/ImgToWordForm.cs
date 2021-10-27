@@ -105,7 +105,7 @@ namespace MyToolsForHer
 
         private void BtnOpenConfig_Click(object sender, EventArgs e)
         {
-            if (File.Exists(TBStatistical.Text))
+            if (File.Exists(TBConfigPath.Text))
             {
                 System.Diagnostics.Process.Start(TBConfigPath.Text);
             }
