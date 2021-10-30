@@ -16,12 +16,13 @@ namespace MyToolsForHer
         private string statisticalPath;
         private MSWord.Application wordApp;
         private Document wordDoc;
-        private string firstTitle;
         private string secondTitle;
-        private float firstTitleSize;
+        private string thirdTitle;
+        private float firstTitleSize = 14;
         private float secondTitleSize;
+        private float thirdTitleSize;
 
-        private List<string> _getFileInfoByConfig(string imgDirPath, string configPath)
+        private List<string> GetImgDirList(string imgDirPath,string configPath)
         {
             string errorInfo = "未找到目录如下：\n";
             List<string> result = new List<string>();
@@ -34,14 +35,12 @@ namespace MyToolsForHer
                     infoList.Add(valueTemp[i]);
                 }
             }
-
             for (int i = 0; i < infoList.Count; i++)
             {
                 string dirPath = Path.Combine(imgDirPath, infoList[i]);
                 if (Directory.Exists(dirPath))
                 {
-                    string[] files = Directory.GetFiles(dirPath, "*.jpg");
-                    result.AddRange(files);
+                    result.Add(dirPath);
                 }
                 else
                 {
@@ -52,10 +51,10 @@ namespace MyToolsForHer
             return result;
         }
 
-        public void SetFontSize(decimal firstTitleSize, decimal secondTitleSize)
+        public void SetFontSize(decimal secondTitleSize, decimal thirdTitleSize)
         {
-            this.firstTitleSize = (float)firstTitleSize;
             this.secondTitleSize = (float)secondTitleSize;
+            this.thirdTitleSize = (float)thirdTitleSize;
         }
 
         public void SetWordName(string text)
@@ -63,29 +62,36 @@ namespace MyToolsForHer
             _wordFileName = text;
         }
 
-        public void SetTitleFlag(string firstTitle, string secondTitle)
+        public void SetTitleFlag(string secondTitle, string thirdTitle)
         {
-            this.firstTitle = firstTitle;
             this.secondTitle = secondTitle;
+            this.thirdTitle = thirdTitle;
         }
 
-        private void _insertTitle(string titleName)
+        private void _insertTitle(string titleName,bool isFirstTitle=false)
         {
             Range textRange = wordDoc.Paragraphs.Last.Range;
-            string fileName = GetFileName(titleName) + "\n";
+            string fileName = titleName + "\n";
             textRange.Text = fileName;
             object oStyleName = WdBuiltinStyle.wdStyleNormal;
-            if (!string.IsNullOrEmpty(firstTitle) || !string.IsNullOrEmpty(secondTitle))
+            if (isFirstTitle)
             {
-                if (!string.IsNullOrEmpty(firstTitle) && fileName.Contains(firstTitle))
+                oStyleName = WdBuiltinStyle.wdStyleHeading1;
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(secondTitle) || !string.IsNullOrEmpty(thirdTitle))
                 {
-                    oStyleName = WdBuiltinStyle.wdStyleHeading1; 
+                    if (!string.IsNullOrEmpty(secondTitle) && fileName.Contains(secondTitle))
+                    {
+                        oStyleName = WdBuiltinStyle.wdStyleHeading2;
+                    }
+                    if (!string.IsNullOrEmpty(thirdTitle) && fileName.Contains(thirdTitle))
+                    {
+                        oStyleName = WdBuiltinStyle.wdStyleHeading3;
+                    }
                 }
-                if (!string.IsNullOrEmpty(secondTitle) && fileName.Contains(secondTitle))
-                {
-                    oStyleName = WdBuiltinStyle.wdStyleHeading2; 
-                }
-            } 
+            }
 
             textRange.set_Style(ref oStyleName);
             if ((WdBuiltinStyle)oStyleName == WdBuiltinStyle.wdStyleHeading1)
@@ -95,6 +101,10 @@ namespace MyToolsForHer
             else if ((WdBuiltinStyle)oStyleName == WdBuiltinStyle.wdStyleHeading2)
             {
                 textRange.Font.Size = secondTitleSize;
+            }
+            else if ((WdBuiltinStyle)oStyleName == WdBuiltinStyle.wdStyleHeading3)
+            {
+                textRange.Font.Size = thirdTitleSize;
             }
             else
             {
@@ -146,6 +156,16 @@ namespace MyToolsForHer
             wordApp.Selection.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
         }
 
+        /// <summary>
+        /// 获取文件名字或目录的父目录名字
+        /// </summary>
+        /// <param name="pathInfo">相关路径</param>
+        public string GetFileOrParentDirName(string pathInfo)
+        {
+            string[] pathTemp = pathInfo.Split('\\');
+            return pathTemp[pathTemp.Length - 1];
+        }
+
         public void CreateWord(string imgDirPath, string wordPath, string configPath)
         {
             //初始化
@@ -154,18 +174,23 @@ namespace MyToolsForHer
             Object Nothing = Missing.Value;
             //新建一个word对象
             wordDoc = wordApp.Documents.Add(ref Nothing, ref Nothing, ref Nothing, ref Nothing);
-            string[] files = _getFileInfoByConfig(imgDirPath, configPath).ToArray();
-
-            for (int i = 0; i < files.Length; i++)
+            List<string> imgDirList = GetImgDirList(imgDirPath,configPath);
+            foreach (string dirPath in imgDirList)
             {
-                string imgName = files[i];
+                string dirName = GetFileOrParentDirName(dirPath);
+                //插入目录标题
+                _insertTitle(dirName, true);
 
-                _insertTitle(imgName);
-
-                _insertImg(files[i]);
-                object oPageBreak = WdBreakType.wdSectionBreakNextPage;
-                wordApp.Selection.InsertBreak(ref oPageBreak);
+                string[] imgFiles = Directory.GetFiles(dirPath, "*.jpg");
+                foreach (string imgPath in imgFiles)
+                {
+                    _insertTitle(Path.GetFileNameWithoutExtension(imgPath));
+                    _insertImg(imgPath);
+                    object oPageBreak = WdBreakType.wdSectionBreakNextPage;
+                    wordApp.Selection.InsertBreak(ref oPageBreak);
+                }
             }
+
             //WdSaveDocument为Word2003文档的保存格式(文档后缀.doc)\wdFormatDocumentDefault为Word2007的保存格式(文档后缀.docx)
             object format = WdSaveFormat.wdFormatDocument;
             object wordPathTemp = (object)wordPath;
@@ -175,14 +200,6 @@ namespace MyToolsForHer
             wordDoc.Close(ref Nothing, ref Nothing, ref Nothing);
             //关闭wordApp组件对象
             wordApp.Quit(ref Nothing, ref Nothing, ref Nothing);
-        }
-
-        public string GetFileName(string filePath)
-        {
-            string[] tempArray = filePath.Split('\\');
-            string fileName = tempArray[tempArray.Length - 1];
-            fileName = fileName.Replace(".jpg", string.Empty);
-            return fileName;
         }
     }
 }

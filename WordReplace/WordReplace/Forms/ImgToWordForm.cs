@@ -46,9 +46,9 @@ namespace MyToolsForHer
             if (_checkInfo())
             {
                 WordControl wordControl = new WordControl();
-                wordControl.SetTitleFlag(TbFirstTitle.Text, TbSecondTitle.Text);
+                wordControl.SetTitleFlag(TbSecondTitle.Text, TbThirdTitle.Text);
                 wordControl.SetWordName(TbWordName.Text + ".doc");
-                wordControl.SetFontSize(NudFirstTitle.Value, NudSecondTitle.Value);
+                wordControl.SetFontSize(10, 10);
                 wordControl.CreateWord(TbImgPath.Text, TBConfigPath.
                     Text, TBWordPath.Text, TBStatistical.Text);
             }
